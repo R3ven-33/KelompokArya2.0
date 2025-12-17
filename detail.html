@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Lapangan - Sports Field Rental</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <!-- Header -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Sports Field Rental</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="booking.html">Booking Jadwal</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Akun</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="login.html">Login</a></li>
+                            <li><a class="dropdown-item" href="register.html">Register</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Title -->
+    <section class="page-title py-4 bg-light">
+        <div class="container">
+            <h1 id="fieldName">Lapangan Mini Soccer</h1>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item"><a href="fields.html">Daftar Lapangan</a></li>
+                    <li class="breadcrumb-item active" id="fieldBreadcrumb">Lapangan Mini Soccer</li>
+                </ol>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Field Details -->
+    <section class="field-details-section py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-8">
+                    <div class="field-gallery mb-4">
+                        <img id="mainImage" src="https://source.unsplash.com/800x400/?soccer-field" alt="Mini Soccer Field" class="img-fluid rounded shadow">
+                        <div class="row mt-3 g-2">
+                            <div class="col-3">
+                                <img src="https://source.unsplash.com/200x150/?soccer-field,1" alt="Field Image 1" class="img-fluid rounded shadow-sm">
+                            </div>
+                            <div class="col-3">
+                                <img src="https://source.unsplash.com/200x150/?soccer-field,2" alt="Field Image 2" class="img-fluid rounded shadow-sm">
+                            </div>
+                            <div class="col-3">
+                                <img src="https://source.unsplash.com/200x150/?soccer-field,3" alt="Field Image 3" class="img-fluid rounded shadow-sm">
+                            </div>
+                            <div class="col-3">
+                                <img src="https://source.unsplash.com/200x150/?soccer-field,4" alt="Field Image 4" class="img-fluid rounded shadow-sm">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="field-description">
+                        <h3>Deskripsi Lapangan</h3>
+                        <p id="fieldDescription">Lapangan Mini Soccer dengan kualitas terbaik yang memiliki permukaan rumput sintetis dan pencahayaan yang baik. Lapangan ini dirancang khusus untuk permainan sepak bola dalam format yang lebih kecil, cocok untuk pertandingan internal, latihan, dan pertandingan persahabatan.</p>
+
+                        <div class="field-facilities mt-4">
+                            <h4>Fasilitas</h4>
+                            <ul>
+                                <li id="facility1">Area Parkir Luas</li>
+                                <li id="facility2">Kamar Mandi</li>
+                                <li id="facility3">Ruang Ganti</li>
+                                <li id="facility4">Tribun Penonton</li>
+                                <li id="facility5">Lighting System</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="field-info card shadow">
+                        <div class="card-body">
+                            <div class="field-price text-center mb-3">
+                                <h2 class="text-primary" id="fieldPrice">Rp 150.000 <small>/jam</small></h2>
+                                <p class="text-muted">Harga dapat berubah tergantung waktu</p>
+                            </div>
+
+                            <div class="field-rating mb-3">
+                                <h5>Rating</h5>
+                                <div class="rating-stars">
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star-half-alt text-warning"></i>
+                                    <span class="ms-2">(4.7 dari 128 ulasan)</span>
+                                </div>
+                            </div>
+
+                            <div class="field-location mb-3">
+                                <h5>Lokasi</h5>
+                                <p id="fieldLocation"><i class="fas fa-map-marker-alt text-danger me-2"></i>Jl. Raya Bogor No.123, Jakarta Timur</p>
+                            </div>
+
+                            <div class="field-type mb-3">
+                                <h5>Jenis Lapangan</h5>
+                                <p id="fieldType"><i class="fas fa-futbol me-2"></i>Mini Soccer</p>
+                            </div>
+
+                            <div class="field-amenities mb-3">
+                                <h5>Status</h5>
+                                <p><i class="fas fa-check-circle text-success me-2"></i>Tersedia Hari Ini</p>
+                            </div>
+
+                            <div class="action-buttons mt-4">
+                                <button class="btn btn-primary w-100 mb-2" data-bs-toggle="modal" data-bs-target="#bookingModal">Pesan Sekarang</button>
+                                <button class="btn btn-outline-secondary w-100">Simpan ke Favorit</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Modal -->
+    <div class="modal fade" id="bookingModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Booking Lapangan</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="booking-form">
+                        <form id="bookingForm">
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label for="bookingDate" class="form-label">Tanggal</label>
+                                    <input type="date" class="form-control" id="bookingDate" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="bookingTime" class="form-label">Jam Mulai</label>
+                                    <select class="form-select" id="bookingTime" required>
+                                        <option value="">Pilih Jam</option>
+                                        <option value="08:00">08:00</option>
+                                        <option value="09:00">09:00</option>
+                                        <option value="10:00">10:00</option>
+                                        <option value="11:00">11:00</option>
+                                        <option value="12:00">12:00</option>
+                                        <option value="13:00">13:00</option>
+                                        <option value="14:00">14:00</option>
+                                        <option value="15:00">15:00</option>
+                                        <option value="16:00">16:00</option>
+                                        <option value="17:00">17:00</option>
+                                        <option value="18:00">18:00</option>
+                                        <option value="19:00">19:00</option>
+                                        <option value="20:00">20:00</option>
+                                        <option value="21:00">21:00</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="duration" class="form-label">Durasi (Jam)</label>
+                                    <select class="form-select" id="duration" required>
+                                        <option value="1">1 Jam</option>
+                                        <option value="2">2 Jam</option>
+                                        <option value="3">3 Jam</option>
+                                        <option value="4">4 Jam</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="totalAmount" class="form-label">Total Biaya</label>
+                                    <input type="text" class="form-control" id="totalAmount" readonly>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="termsCheck" required>
+                                        <label class="form-check-label" for="termsCheck">Saya menyetujui <a href="#" target="_blank">syarat dan ketentuan</a></label>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+                    <button type="button" class="btn btn-primary" id="confirmBooking">Konfirmasi Booking</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>Sports Field Rental</h5>
+                    <p>Penyedia layanan sewa lapangan olahraga terbaik di Indonesia.</p>
+                </div>
+                <div class="col-md-6 text-end">
+                    <p>&copy; 2025 Sports Field Rental. All rights reserved.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook mx-2"></i></a>
+                        <a href="#"><i class="fab fa-twitter mx-2"></i></a>
+                        <a href="#"><i class="fab fa-instagram mx-2"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/detail.js"></script>
+</body>
+</html>

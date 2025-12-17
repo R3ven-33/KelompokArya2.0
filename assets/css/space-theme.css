@@ -1,0 +1,625 @@
+/* Warna Latar Luar Angkasa */
+body {
+  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+  background-attachment: fixed;
+}
+
+/* Warna Navbar */
+.navbar-dark {
+  background: rgba(15, 12, 41, 0.9) !important;
+  backdrop-filter: blur(10px);
+  position: relative;
+  z-index: 1000;
+}
+
+/* Dropdown menu z-index fix for space theme */
+.dropdown-menu.show {
+  z-index: 1050 !important;
+}
+
+/* Hero section shapes should not overlap dropdown */
+.hero-background-shapes {
+  z-index: 1;
+}
+
+.bg-primary {
+  background: rgba(15, 12, 41, 0.9) !important;
+}
+
+/* Hero Section dengan Gambar */
+.hero-section {
+  background: linear-gradient(rgba(15, 12, 41, 0.7), rgba(48, 43, 99, 0.7)), url('../../wp.png');
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: overlay;
+  color: white;
+  min-height: 80vh;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Efek bintang di latar belakang */
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(2px 2px at 20px 30px, #eee, transparent),
+    radial-gradient(2px 2px at 40px 70px, rgba(255,255,255,0.8), transparent),
+    radial-gradient(1px 1px at 90px 40px, #fff, transparent),
+    radial-gradient(1px 1px at 130px 80px, rgba(255,255,255,0.6), transparent),
+    radial-gradient(2px 2px at 160px 30px, #ddd, transparent);
+  background-repeat: repeat;
+  background-size: 200px 100px;
+  animation: sparkle 3s ease-in-out infinite alternate;
+}
+
+@keyframes sparkle {
+  0% { background-position: 0 0; }
+  100% { background-position: 100px -100px; }
+}
+
+/* Warna tombol */
+.btn-primary {
+  background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+  border: none;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #2575fc 0%, #6a11cb 100%);
+}
+
+.btn-outline-light {
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  color: white;
+}
+
+.btn-outline-light:hover {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+/* Kartu fitur */
+.feature-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* Bagian tentang */
+.about-section {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(5px);
+}
+
+/* Bagian CTA booking */
+.booking-cta-section {
+  background: rgba(15, 12, 41, 0.5);
+  backdrop-filter: blur(5px);
+}
+
+/* Footer */
+footer {
+  background: rgba(15, 12, 41, 0.9) !important;
+}
+
+/* Shape efek di hero section */
+.hero-background-shapes {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.shape {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.2;
+}
+
+.shape-1 {
+  width: 200px;
+  height: 200px;
+  background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+  top: 20%;
+  left: 10%;
+  animation: float 6s ease-in-out infinite;
+}
+
+.shape-2 {
+  width: 150px;
+  height: 150px;
+  background: linear-gradient(135deg, #ff6b6b 0%, #ffa500 100%);
+  top: 60%;
+  right: 10%;
+  animation: float 8s ease-in-out infinite;
+}
+
+.shape-3 {
+  width: 100px;
+  height: 100px;
+  background: linear-gradient(135deg, #20bf6b 0%, #0fb9b1 100%);
+  bottom: 20%;
+  left: 20%;
+  animation: float 7s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+  100% { transform: translateY(0px); }
+}
+
+/* Gambar di hero section */
+.hero-image {
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  max-width: 100%;
+  height: auto;
+}
+
+/* Booking Page Dark Indigo Theme */
+.booking-section {
+  background: linear-gradient(135deg, #2E0854, #4B0082, #2E0854); /* Dark indigo gradient */
+  color: #7DF9FF; /* Cyan text */
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(75, 0, 130, 0.3);
+  padding: 25px;
+  margin-bottom: 20px;
+}
+
+.booking-section h1,
+.booking-section h2,
+.booking-section h3,
+.booking-section h4,
+.booking-section h5,
+.booking-section h6,
+.booking-section p,
+.booking-section label,
+.booking-section .step-text,
+.booking-section .card-body,
+.booking-section .breadcrumb,
+.booking-section .form-control,
+.booking-section .form-select,
+.booking-section .table,
+.booking-section .alert,
+.booking-section .step-number,
+.booking-section .form-label {
+  color: #7DF9FF !important; /* Cyan text */
+}
+
+.booking-section .text-muted {
+  color: #7DF9FF !important;
+  opacity: 0.8;
+}
+
+.booking-section .text-end {
+  color: #7DF9FF !important;
+}
+
+/* Booking Cards with Dark Indigo Theme */
+.booking-section .card {
+  background: linear-gradient(145deg, #3a0a65, #4B0082); /* Dark indigo gradient */
+  border: 1px solid #5D29A0 !important;
+  border-radius: 12px !important;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3) !important;
+  color: #7DF9FF !important;
+  transition: all 0.3s ease;
+}
+
+.booking-section .card-header {
+  background: linear-gradient(to right, #4B0082, #5D29A0) !important;
+  color: #7DF9FF !important;
+  border-bottom: 1px solid #5D29A0 !important;
+  border-radius: 12px 12px 0 0 !important;
+}
+
+.booking-section .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(75, 0, 130, 0.4) !important;
+}
+
+/* Form Controls in Booking Section */
+.booking-section .form-control,
+.booking-section .form-select {
+  background-color: rgba(46, 8, 84, 0.5) !important; /* Dark indigo semi-transparent */
+  border: 1px solid #5D29A0 !important;
+  color: #7DF9FF !important;
+  border-radius: 8px !important;
+  padding: 10px 15px;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.booking-section .form-control:focus,
+.booking-section .form-select:focus {
+  background-color: rgba(46, 8, 84, 0.7) !important;
+  border-color: #7DF9FF !important;
+  box-shadow: 0 0 0 0.2rem rgba(125, 249, 255, 0.25) !important;
+  color: #7DF9FF;
+}
+
+/* Booking Steps Styling */
+.booking-steps .step {
+  position: relative;
+  text-align: center;
+  flex: 1;
+  padding: 0 10px;
+}
+
+.booking-steps .step .step-number {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #4B0082, #6A5ACD) !important;
+  color: #7DF9FF !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 10px;
+  font-weight: bold;
+  font-size: 1rem;
+  border: 2px solid #7DF9FF;
+}
+
+.booking-steps .step.active .step-number {
+  background: linear-gradient(135deg, #6A5ACD, #9370DB) !important;
+  box-shadow: 0 0 15px rgba(125, 249, 255, 0.5);
+}
+
+.booking-steps .step .step-text {
+  color: #7DF9FF !important;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* Payment Options in Booking Section */
+.payment-option {
+  background: linear-gradient(135deg, #4B0082, #3a0a65) !important;
+  border: 1px solid #5D29A0 !important;
+  border-radius: 12px !important;
+  color: #7DF9FF !important;
+  transition: all 0.3s ease;
+}
+
+.payment-option:hover {
+  background: linear-gradient(135deg, #5D29A0, #4B0082) !important;
+  border-color: #7DF9FF !important;
+  transform: translateY(-3px) !important;
+  box-shadow: 0 6px 15px rgba(75, 0, 130, 0.4) !important;
+}
+
+.payment-section .payment-confirmation,
+.payment-section .payment-summary {
+  background: linear-gradient(135deg, #3a0a65, #4B0082) !important;
+  border: 1px solid #5D29A0 !important;
+  border-radius: 12px !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Table styling in booking section */
+.booking-section .table {
+  color: #7DF9FF !important;
+}
+
+.booking-section .table th {
+  background-color: rgba(75, 0, 130, 0.3) !important;
+  color: #7DF9FF !important;
+  border-color: #5D29A0 !important;
+}
+
+.booking-section .table td {
+  border-color: #5D29A0 !important;
+  color: #7DF9FF !important;
+}
+
+/* Alert styling in booking section */
+.booking-section .alert {
+  background: rgba(75, 0, 130, 0.2) !important;
+  border: 1px solid #5D29A0 !important;
+  color: #7DF9FF !important;
+  border-radius: 8px !important;
+}
+
+/* Button styling in booking section */
+.booking-section .btn {
+  border-radius: 8px !important;
+  padding: 10px 20px !important;
+  background: linear-gradient(135deg, #4B0082, #5D29A0) !important;
+  border: 1px solid #7A67EE !important;
+  color: #7DF9FF !important;
+}
+
+.booking-section .btn-primary {
+  background: linear-gradient(135deg, #4B0082, #5D29A0) !important;
+  border-color: #7A67EE !important;
+  color: #7DF9FF !important;
+}
+
+.booking-section .btn-primary:hover {
+  background: linear-gradient(135deg, #5D29A0, #6A5ACD) !important;
+  border-color: #7DF9FF !important;
+  color: #ffffff !important;
+}
+
+/* Time Slots Styling */
+.time-slot {
+  background: #ffffff !important;
+  border: 2px solid #A52A2A !important;
+  color: #000000 !important;
+  border-radius: 8px !important;
+  padding: 10px !important;
+  text-align: center !important;
+  cursor: pointer !important;
+  transition: all 0.2s !important;
+}
+
+.time-slot:hover {
+  background: linear-gradient(135deg, #4B0082, #5D29A0) !important;
+  border-color: #7DF9FF !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 4px 8px rgba(75, 0, 130, 0.3) !important;
+}
+
+.time-slot.selected {
+  background: linear-gradient(135deg, #6A5ACD, #9370DB) !important;
+  border-color: #7DF9FF !important;
+  color: #000000 !important;
+}
+
+.time-slot.booked {
+  background: linear-gradient(135deg, #8B0000, #A52A2A) !important;
+  border-color: #DC143C !important;
+  color: #ffffff !important;
+  cursor: not-allowed !important;
+  opacity: 0.6 !important;
+}
+
+/* Booking Field Dropdown */
+#selectField {
+  background: linear-gradient(135deg, #2E0854, #4B0082) !important;
+  border: 1px solid #5D29A0 !important;
+  color: #7DF9FF !important;
+  border-radius: 8px !important;
+}
+
+#selectField option {
+  background: #3a0a65 !important;
+  color: #7DF9FF !important;
+}
+
+/* Payment Table Rows */
+.booking-section .table tbody tr {
+  background: rgba(46, 8, 84, 0.3) !important;
+  border-bottom: 1px solid #5D29A0 !important;
+}
+
+.booking-section .table tbody tr:nth-child(even) {
+  background: rgba(58, 10, 101, 0.4) !important;
+}
+
+.booking-section .table tbody tr:hover {
+  background: rgba(75, 0, 130, 0.4) !important;
+}
+
+/* Booking Summary Card */
+.booking-summary .card {
+  background: linear-gradient(145deg, #3a0a65, #4B0082) !important;
+  border: 1px solid #5D29A0 !important;
+  border-radius: 12px !important;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3) !important;
+  color: #7DF9FF !important;
+}
+
+.booking-summary .card-header {
+  background: linear-gradient(to right, #4B0082, #5D29A0) !important;
+  color: #7DF9FF !important;
+  border-bottom: 1px solid #5D29A0 !important;
+  border-radius: 12px 12px 0 0 !important;
+}
+
+/* Field Preview in Summary */
+.field-preview img {
+  border-radius: 8px !important;
+  border: 1px solid #5D29A0 !important;
+}
+
+/* Form Control in Booking Summary */
+.booking-summary .form-control,
+.booking-summary .form-select {
+  background-color: rgba(46, 8, 84, 0.5) !important;
+  border: 1px solid #5D29A0 !important;
+  color: #7DF9FF !important;
+}
+
+/* Payment Details Container */
+#step3 {
+  background: linear-gradient(145deg, #3a0a65, #4B0082) !important;
+  border: 1px solid #5D29A0 !important;
+  border-radius: 12px !important;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3) !important;
+  color: #7DF9FF !important;
+  padding: 20px !important;
+}
+
+/* Payment Summary Container */
+.payment-summary {
+  background: linear-gradient(145deg, #3a0a65, #4B0082) !important;
+  border: 1px solid #5D29A0 !important;
+  border-radius: 12px !important;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3) !important;
+  color: #7DF9FF !important;
+  padding: 15px !important;
+}
+
+/* Payment Confirmation Container */
+.payment-confirmation {
+  background: linear-gradient(145deg, #3a0a65, #4B0082) !important;
+  border: 1px solid #5D29A0 !important;
+  border-radius: 12px !important;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3) !important;
+  color: #7DF9FF !important;
+  padding: 15px !important;
+}
+
+/* Booking Summary Section (right column) */
+.booking-summary {
+  background: transparent !important;
+}
+
+.booking-summary .card {
+  background: linear-gradient(145deg, #3a0a65, #4B0082) !important;
+  border: 1px solid #5D29A0 !important;
+  border-radius: 12px !important;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3) !important;
+  color: #7DF9FF !important;
+}
+
+.booking-summary .card-header {
+  background: linear-gradient(to right, #4B0082, #5D29A0) !important;
+  color: #7DF9FF !important;
+  border-bottom: 1px solid #5D29A0 !important;
+  border-radius: 12px 12px 0 0 !important;
+}
+
+.booking-summary .card-body {
+  background: rgba(58, 10, 101, 0.2) !important;
+  color: #7DF9FF !important;
+}
+
+.booking-summary .field-preview img {
+  background: rgba(58, 10, 101, 0.2) !important;
+  border: 1px solid #5D29A0 !important;
+  border-radius: 8px !important;
+}
+
+.booking-summary h6,
+.booking-summary .text-muted,
+.booking-summary .booking-dates p {
+  color: #7DF9FF !important;
+}
+
+/* Payment Details Table Styling */
+.payment-summary .table {
+  background: transparent !important;
+  color: #7DF9FF !important;
+}
+
+.payment-summary .table tr {
+  background: rgba(46, 8, 84, 0.5) !important; /* Deep indigo background */
+  border-bottom: 1px solid #5D29A0 !important; /* Lighter indigo divider */
+  color: #7DF9FF !important;
+  margin-bottom: 2px;
+  border-radius: 6px;
+}
+
+.payment-summary .table tr:last-child {
+  border-bottom: none;
+}
+
+.payment-summary .table td {
+  border: none !important;
+  padding: 12px 15px !important;
+  vertical-align: middle !important;
+  color: #7DF9FF !important;
+}
+
+.payment-summary .table td:first-child {
+  color: #7DF9FF !important; /* Light cyan for labels */
+  font-weight: 500;
+  width: 40%;
+}
+
+.payment-summary .table td:last-child {
+  color: #00FFFF !important; /* Bright cyan for values */
+  font-weight: 600;
+  text-align: right !important;
+}
+
+.payment-summary .table .fw-bold strong {
+  color: #00FFFF !important; /* Bright cyan for total value */
+}
+
+/* Pilih Lapangan Dropdown Styling */
+.form-floating > .form-select {
+  background: linear-gradient(135deg, #2E0854, #4B0082) !important;
+  border: 1px solid #5D29A0 !important;
+  color: #7DF9FF !important;
+  padding: 8px 12px !important;
+  border-radius: 8px !important;
+}
+
+.form-floating > label {
+  background: linear-gradient(135deg, #2E0854, #4B0082) !important;
+  color: #7DF9FF !important;
+  border: 1px solid #5D29A0 !important;
+  border-radius: 8px 8px 0 0 !important;
+  border-bottom: none !important;
+  padding: 5px 15px !important;
+}
+
+.form-floating > .form-select:focus {
+  background: linear-gradient(135deg, #4B0082, #5D29A0) !important;
+  border-color: #7DF9FF !important;
+  box-shadow: 0 0 0 0.2rem rgba(125, 249, 255, 0.25) !important;
+  color: #7DF9FF !important;
+}
+
+.form-floating > .form-select:focus ~ label {
+  color: #00FFFF !important;
+}
+
+/* Main Booking Content Area */
+.booking-section .col-lg-8 {
+  background: transparent !important;
+  padding: 0 !important;
+}
+
+.booking-section .step-content {
+  display: none !important;
+  background: linear-gradient(145deg, #3a0a65, #4B0082) !important;
+  border: 1px solid #5D29A0 !important;
+  border-radius: 12px !important;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3) !important;
+  color: #7DF9FF !important;
+  padding: 20px !important;
+  margin-bottom: 20px !important;
+}
+
+.booking-section .step-content.active {
+  display: block !important;
+}
+
+/* Field Information Card */
+.booking-section .card.mb-4 {
+  background: rgba(58, 10, 101, 0.4) !important;
+  border: 1px solid #5D29A0 !important;
+  border-radius: 12px !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2) !important;
+  color: #7DF9FF !important;
+}
+
+.booking-section .card.mb-4 .card-body {
+  background: transparent !important;
+  color: #7DF9FF !important;
+}
+
+.booking-section .card.mb-4 p {
+  color: #7DF9FF !important;
+}
+
+.booking-section .card.mb-4 p strong {
+  color: #00FFFF !important;
+}

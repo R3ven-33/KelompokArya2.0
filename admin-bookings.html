@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kelola Booking - Admin Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <!-- Header -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Sports Field Rental</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="booking.html">Booking Jadwal</a>
+                    </li>
+                    <li class="nav-item active dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Admin</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="dashboard-admin.html">Dashboard</a></li>
+                            <li><a class="dropdown-item active" href="admin-bookings.html">Kelola Booking</a></li>
+                            <li><a class="dropdown-item" href="admin-payments.html">Konfirmasi Pembayaran</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#" id="adminLogoutBtn">Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Title -->
+    <section class="page-title py-4 bg-light">
+        <div class="container">
+            <h1>Kelola Booking</h1>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item"><a href="dashboard-admin.html">Dashboard Admin</a></li>
+                    <li class="breadcrumb-item active">Kelola Booking</li>
+                </ol>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Bookings Management Content -->
+    <section class="bookings-management py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <h3>Daftar Booking</h3>
+                        <div class="d-flex gap-2">
+                            <select class="form-select w-auto" id="statusFilter">
+                                <option value="">Semua Status</option>
+                                <option value="completed">Selesai</option>
+                                <option value="pending">Menunggu Pembayaran</option>
+                                <option value="confirmed">Dikonfirmasi</option>
+                                <option value="cancelled">Dibatalkan</option>
+                            </select>
+                            <button class="btn btn-outline-primary">
+                                <i class="fas fa-sync-alt"></i> Refresh
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Search and Filter -->
+                    <div class="row mb-4">
+                        <div class="col-md-6">
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Cari berdasarkan ID booking, email, atau nama...">
+                                <button class="btn btn-outline-secondary" type="button">Cari</button>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="d-flex gap-2">
+                                <input type="date" class="form-control">
+                                <input type="date" class="form-control">
+                                <select class="form-select">
+                                    <option value="">Semua Lapangan</option>
+                                    <option value="1">Lapangan Futsal Center Jakarta</option>
+                                    <option value="2">Grand Basketball Arena</option>
+                                    <option value="3">Tennis Court Premium</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Bookings Table -->
+                    <div class="card shadow-sm">
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>ID Booking</th>
+                                            <th>Lapangan</th>
+                                            <th>Tanggal</th>
+                                            <th>Status</th>
+                                            <th>Total</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>#BK00127</td>
+                                            <td>Lapangan Mini Soccer</td>
+                                            <td>15 Dec 2025</td>
+                                            <td><span class="badge bg-success">Selesai</span></td>
+                                            <td>Rp 300.000</td>
+                                        </tr>
+                                        <tr>
+                                            <td>#BK00126</td>
+                                            <td>Lapangan Mini Soccer</td>
+                                            <td>14 Dec 2025</td>
+                                            <td><span class="badge bg-warning">Menunggu</span></td>
+                                            <td>Rp 300.000</td>
+                                        </tr>
+                                        <tr>
+                                            <td>#BK00125</td>
+                                            <td>Lapangan Mini Soccer</td>
+                                            <td>14 Dec 2025</td>
+                                            <td><span class="badge bg-success">Dikonfirmasi</span></td>
+                                            <td>Rp 300.000</td>
+                                        </tr>
+                                        <tr>
+                                            <td>#BK00124</td>
+                                            <td>Lapangan Mini Soccer</td>
+                                            <td>13 Dec 2025</td>
+                                            <td><span class="badge bg-success">Selesai</span></td>
+                                            <td>Rp 300.000</td>
+                                        </tr>
+                                        <tr>
+                                            <td>#BK00123</td>
+                                            <td>Lapangan Mini Soccer</td>
+                                            <td>10 Dec 2025</td>
+                                            <td><span class="badge bg-danger">Dibatalkan</span></td>
+                                            <td>Rp 300.000</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            
+                            <!-- Pagination -->
+                            <nav aria-label="Bookings pagination" class="mt-4">
+                                <ul class="pagination justify-content-center">
+                                    <li class="page-item disabled">
+                                        <a class="page-link" href="#" tabindex="-1">Previous</a>
+                                    </li>
+                                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#">Next</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- View Booking Modal -->
+    <div class="modal fade" id="viewBookingModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Detail Booking #BK00126</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h6>Detail Booking</h6>
+                            <table class="table table-sm">
+                                <tr>
+                                    <td><strong>ID Booking</strong></td>
+                                    <td>#BK00126</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Tanggal</strong></td>
+                                    <td>14 Dec 2025</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Jam</strong></td>
+                                    <td>09:00 - 11:00</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Durasi</strong></td>
+                                    <td>2 Jam</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Total</strong></td>
+                                    <td>Rp 240.000</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Status</strong></td>
+                                    <td><span class="badge bg-warning">Menunggu</span></td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="col-md-6">
+                            <h6>Detail Pengguna</h6>
+                            <table class="table table-sm">
+                                <tr>
+                                    <td><strong>Nama</strong></td>
+                                    <td>Siti Nurhaliza</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Email</strong></td>
+                                    <td>siti.nurhaliza@example.com</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>HP</strong></td>
+                                    <td>081234567890</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Alamat</strong></td>
+                                    <td>Jl. Raya Bogor No.45, Jakarta Timur</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    
+                    <div class="row mt-4">
+                        <div class="col-12">
+                            <h6>Detail Lapangan</h6>
+                            <table class="table table-sm">
+                                <tr>
+                                    <td><strong>Nama Lapangan</strong></td>
+                                    <td>Lapangan Mini Soccer</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Jenis Lapangan</strong></td>
+                                    <td>Mini Soccer</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Lokasi</strong></td>
+                                    <td>Jl. Raya Bogor No.123, Jakarta Timur</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    
+                    <div class="row mt-4">
+                        <div class="col-12">
+                            <h6>Pembayaran</h6>
+                            <table class="table table-sm">
+                                <tr>
+                                    <td><strong>Metode Pembayaran</strong></td>
+                                    <td>Transfer Bank</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Status Pembayaran</strong></td>
+                                    <td><span class="badge bg-warning">Menunggu Konfirmasi</span></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Tanggal Booking</strong></td>
+                                    <td>13 Dec 2025, 15:30</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-primary">Cetak Bukti</button>
+                    <button type="button" class="btn btn-outline-danger">Batalkan Booking</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>Sports Field Rental</h5>
+                    <p>Penyedia layanan sewa lapangan olahraga terbaik di Indonesia.</p>
+                </div>
+                <div class="col-md-6 text-end">
+                    <p>&copy; 2025 Sports Field Rental. All rights reserved.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook mx-2"></i></a>
+                        <a href="#"><i class="fab fa-twitter mx-2"></i></a>
+                        <a href="#"><i class="fab fa-instagram mx-2"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/admin-bookings.js"></script>
+</body>
+</html>

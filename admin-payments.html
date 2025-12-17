@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Konfirmasi Pembayaran - Admin Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <!-- Header -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Sports Field Rental</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="booking.html">Booking Jadwal</a>
+                    </li>
+                    <li class="nav-item active dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Admin</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="dashboard-admin.html">Dashboard</a></li>
+                            <li><a class="dropdown-item" href="admin-bookings.html">Kelola Booking</a></li>
+                            <li><a class="dropdown-item active" href="admin-payments.html">Konfirmasi Pembayaran</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#" id="adminLogoutBtn">Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Title -->
+    <section class="page-title py-4 bg-light">
+        <div class="container">
+            <h1>Konfirmasi Pembayaran Booking</h1>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item"><a href="dashboard-admin.html">Dashboard Admin</a></li>
+                    <li class="breadcrumb-item active">Konfirmasi Pembayaran</li>
+                </ol>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Payment Management Content -->
+    <section class="payment-management py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <h3>Daftar Pembayaran Menunggu</h3>
+                        <div class="d-flex gap-2">
+                            <select class="form-select w-auto" id="statusFilter">
+                                <option value="">Semua Status</option>
+                                <option value="pending">Menunggu</option>
+                                <option value="confirmed">Dikonfirmasi</option>
+                                <option value="rejected">Ditolak</option>
+                            </select>
+                            <button class="btn btn-outline-primary">
+                                <i class="fas fa-sync-alt"></i> Refresh
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Search and Filter -->
+                    <div class="row mb-4">
+                        <div class="col-md-6">
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Cari berdasarkan ID booking, email, atau nama...">
+                                <button class="btn btn-outline-secondary" type="button">Cari</button>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="d-flex gap-2">
+                                <input type="date" class="form-control">
+                                <input type="date" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Payments Table -->
+                    <div class="card shadow-sm">
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>ID Booking</th>
+                                            <th>Nama Pengguna</th>
+                                            <th>Metode</th>
+                                            <th>Jumlah</th>
+                                            <th>Tanggal</th>
+                                            <th>Status</th>
+                                            <th>Aksi</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <!-- Payments will be loaded dynamically by admin-payments.js -->
+                                        <tr id="noPaymentsRow">
+                                            <td colspan="7" class="text-center py-4">
+                                                <div class="text-muted">
+                                                    <i class="fas fa-info-circle fa-2x mb-2"></i>
+                                                    <p>Belum ada pembayaran yang menunggu konfirmasi.</p>
+                                                    <small>Pembayaran akan muncul di sini setelah customer mengupload bukti pembayaran.</small>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            
+                            <!-- Pagination -->
+                            <nav aria-label="Payment pagination" class="mt-4">
+                                <ul class="pagination justify-content-center">
+                                    <li class="page-item disabled">
+                                        <a class="page-link" href="#" tabindex="-1">Previous</a>
+                                    </li>
+                                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#">Next</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- View Proof Modal -->
+    <div class="modal fade" id="viewProofModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Bukti Pembayaran</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <img src="https://source.unsplash.com/600x400/?receipt" alt="Payment Proof" class="img-fluid rounded mb-3">
+                    <div class="payment-details">
+                        <p><strong>Booking ID:</strong> #BK00126</p>
+                        <p><strong>Pengguna:</strong> Siti Nurhaliza</p>
+                        <p><strong>Total Pembayaran:</strong> Rp 240.000</p>
+                        <p><strong>Metode Pembayaran:</strong> Transfer Bank</p>
+                        <p><strong>Tanggal Pembayaran:</strong> 15 Dec 2025, 14:25</p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success">Konfirmasi</button>
+                    <button type="button" class="btn btn-danger">Tolak</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Confirm Payment Modal -->
+    <div class="modal fade" id="confirmPaymentModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Konfirmasi Pembayaran</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Apakah Anda yakin ingin mengkonfirmasi pembayaran ini?</p>
+                    <div class="alert alert-info">
+                        <strong>Booking ID:</strong> #BK00126<br>
+                        <strong>Pengguna:</strong> Siti Nurhaliza<br>
+                        <strong>Jumlah:</strong> Rp 240.000
+                    </div>
+                    <p>Setelah dikonfirmasi, status booking akan berubah menjadi "Dikonfirmasi" dan lapangan akan dicadangkan.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+                    <button type="button" class="btn btn-success">Konfirmasi</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Reject Payment Modal -->
+    <div class="modal fade" id="rejectPaymentModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Tolak Pembayaran</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Apakah Anda yakin ingin menolak pembayaran ini?</p>
+                    <div class="mb-3">
+                        <label for="rejectionReason" class="form-label">Alasan Penolakan</label>
+                        <textarea class="form-control" id="rejectionReason" rows="3" placeholder="Masukkan alasan penolakan..."></textarea>
+                    </div>
+                    <p>Setelah ditolak, pengguna akan diberitahu dan harus melakukan pembayaran ulang.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+                    <button type="button" class="btn btn-danger">Tolak Pembayaran</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>Sports Field Rental</h5>
+                    <p>Penyedia layanan sewa lapangan olahraga terbaik di Indonesia.</p>
+                </div>
+                <div class="col-md-6 text-end">
+                    <p>&copy; 2025 Sports Field Rental. All rights reserved.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook mx-2"></i></a>
+                        <a href="#"><i class="fab fa-twitter mx-2"></i></a>
+                        <a href="#"><i class="fab fa-instagram mx-2"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/admin-payments.js"></script>
+</body>
+</html>

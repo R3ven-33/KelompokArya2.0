@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Admin - Sports Field Rental</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <!-- Header -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Sports Field Rental</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="booking.html">Booking Jadwal</a>
+                    </li>
+                    <li class="nav-item active dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Admin</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item active" href="dashboard-admin.html">Dashboard</a></li>
+                            <li><a class="dropdown-item" href="admin-bookings.html">Kelola Booking</a></li>
+                            <li><a class="dropdown-item" href="admin-payments.html">Konfirmasi Pembayaran</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#" id="adminLogoutBtn">Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Title -->
+    <section class="page-title py-4 bg-light">
+        <div class="container">
+            <h1>Dashboard Admin</h1>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item active">Dashboard Admin</li>
+                </ol>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Admin Dashboard Stats -->
+    <section class="admin-dashboard-stats py-4">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-3">
+                    <div class="stat-card card text-center">
+                        <div class="card-body">
+                            <i class="fas fa-users fa-2x text-primary mb-2"></i>
+                            <h4 id="totalUsers">1,245</h4>
+                            <p class="text-muted">Total Pengguna</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="stat-card card text-center">
+                        <div class="card-body">
+                            <i class="fas fa-futbol fa-2x text-success mb-2"></i>
+                            <h4 id="totalFields">1</h4>
+                            <p class="text-muted">Total Lapangan</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="stat-card card text-center">
+                        <div class="card-body">
+                            <i class="fas fa-bookmark fa-2x text-info mb-2"></i>
+                            <h4 id="totalBookings">156</h4>
+                            <p class="text-muted">Total Booking</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="stat-card card text-center">
+                        <div class="card-body">
+                            <i class="fas fa-rupee-sign fa-2x text-warning mb-2"></i>
+                            <h4 id="totalRevenue">Rp 45.200.000</h4>
+                            <p class="text-muted">Total Pendapatan</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Admin Content -->
+    <section class="admin-content py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-8">
+                    <!-- Recent Bookings -->
+                    <div class="recent-bookings mb-4">
+                        <div class="d-flex justify-content-between align-items-center mb-4">
+                            <h3>Booking Terbaru</h3>
+                            <a href="admin-bookings.html" class="btn btn-primary">Lihat Semua</a>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-hover">
+                                        <thead>
+                                            <tr>
+                                                <th>ID Booking</th>
+                                                <th>Pengguna</th>
+                                                <th>Lapangan</th>
+                                                <th>Tanggal</th>
+                                                <th>Status</th>
+                                                <th>Total</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>#BK00127</td>
+                                                <td>Ahmad Jaelani</td>
+                                                <td>Lapangan Mini Soccer</td>
+                                                <td>15 Dec 2025</td>
+                                                <td><span class="badge bg-success">Dikonfirmasi</span></td>
+                                                <td>Rp 300.000</td>
+                                            </tr>
+                                            <tr>
+                                                <td>#BK00126</td>
+                                                <td>Siti Nurhaliza</td>
+                                                <td>Lapangan Mini Soccer</td>
+                                                <td>14 Dec 2025</td>
+                                                <td><span class="badge bg-warning">Menunggu</span></td>
+                                                <td>Rp 300.000</td>
+                                            </tr>
+                                            <tr>
+                                                <td>#BK00125</td>
+                                                <td>Budi Santoso</td>
+                                                <td>Lapangan Mini Soccer</td>
+                                                <td>14 Dec 2025</td>
+                                                <td><span class="badge bg-success">Dikonfirmasi</span></td>
+                                                <td>Rp 300.000</td>
+                                            </tr>
+                                            <tr>
+                                                <td>#BK00124</td>
+                                                <td>Rina Kartika</td>
+                                                <td>Lapangan Mini Soccer</td>
+                                                <td>13 Dec 2025</td>
+                                                <td><span class="badge bg-success">Selesai</span></td>
+                                                <td>Rp 300.000</td>
+                                            </tr>
+                                            <tr>
+                                                <td>#BK00123</td>
+                                                <td>Ahmad Jaelani</td>
+                                                <td>Lapangan Mini Soccer</td>
+                                                <td>10 Dec 2025</td>
+                                                <td><span class="badge bg-danger">Dibatalkan</span></td>
+                                                <td>Rp 300.000</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Recent Payments -->
+                    <div class="recent-payments">
+                        <div class="d-flex justify-content-between align-items-center mb-4">
+                            <h3>Konfirmasi Pembayaran</h3>
+                            <a href="admin-payments.html" class="btn btn-primary">Lihat Semua</a>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-hover">
+                                        <thead>
+                                            <tr>
+                                                <th>ID Booking</th>
+                                                <th>Pengguna</th>
+                                                <th>Bukti Bayar</th>
+                                                <th>Status</th>
+                                                <th>Aksi</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>#BK00126</td>
+                                                <td>Siti Nurhaliza</td>
+                                                <td><a href="#" data-bs-toggle="modal" data-bs-target="#paymentModal">Lihat Bukti</a></td>
+                                                <td><span class="badge bg-warning">Menunggu</span></td>
+                                                <td>
+                                                    <button class="btn btn-sm btn-success">Konfirmasi</button>
+                                                    <button class="btn btn-sm btn-danger">Tolak</button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>#BK00122</td>
+                                                <td>Andi Pratama</td>
+                                                <td><a href="#" data-bs-toggle="modal" data-bs-target="#paymentModal">Lihat Bukti</a></td>
+                                                <td><span class="badge bg-warning">Menunggu</span></td>
+                                                <td>
+                                                    <button class="btn btn-sm btn-success">Konfirmasi</button>
+                                                    <button class="btn btn-sm btn-danger">Tolak</button>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <!-- Quick Actions -->
+                    <div class="quick-actions mb-4">
+                        <h3>Aksi Cepat</h3>
+                        <div class="card">
+                            <div class="card-body">
+                                <a href="admin-payments.html" class="btn btn-primary w-100 mb-2">
+                                    <i class="fas fa-credit-card me-2"></i> Konfirmasi Pembayaran
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Admin Profile Card -->
+                    <div class="admin-profile mb-4">
+                        <h3>Profil Admin</h3>
+                        <div class="card">
+                            <div class="card-body text-center">
+                                <div class="profile-img-container mb-3">
+                                    <div class="profile-img bg-primary rounded-circle d-inline-flex align-items-center justify-content-center" style="width: 80px; height: 80px;">
+                                        <i class="fas fa-user-shield text-white fa-2x"></i>
+                                    </div>
+                                </div>
+                                <h5 id="adminName">Admin Utama</h5>
+                                <p class="text-muted" id="adminEmail">admin@sporstfield.com</p>
+                                <div class="d-grid gap-2">
+                                    <a href="#" class="btn btn-outline-primary btn-sm">Edit Profil</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Payment Modal -->
+    <div class="modal fade" id="paymentModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Bukti Pembayaran</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <img src="https://source.unsplash.com/600x400/?receipt" alt="Payment Proof" class="img-fluid rounded mb-3">
+                    <p><strong>Booking ID:</strong> #BK00126</p>
+                    <p><strong>Pengguna:</strong> Siti Nurhaliza</p>
+                    <p><strong>Total Pembayaran:</strong> Rp 240.000</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success">Konfirmasi Pembayaran</button>
+                    <button type="button" class="btn btn-danger">Tolak Pembayaran</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>Sports Field Rental</h5>
+                    <p>Penyedia layanan sewa lapangan olahraga terbaik di Indonesia.</p>
+                </div>
+                <div class="col-md-6 text-end">
+                    <p>&copy; 2025 Sports Field Rental. All rights reserved.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook mx-2"></i></a>
+                        <a href="#"><i class="fab fa-twitter mx-2"></i></a>
+                        <a href="#"><i class="fab fa-instagram mx-2"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/admin-dashboard.js"></script>
+</body>
+</html>
